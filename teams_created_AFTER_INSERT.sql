@@ -3,5 +3,6 @@ BEGIN
 	insert into squad_team
     set user_id = new.leader_id,
 		team_created_id = new.id_team_created,
+        status_invite = 'admin',
         type_user = 1;
 END
