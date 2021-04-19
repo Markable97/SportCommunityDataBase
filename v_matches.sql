@@ -14,10 +14,11 @@ select m.id_match,
        tg.id_team as team_guest_id,
        date_format(m.match_date,'%d-%m-%y %H:%i') match_date,
        s.name_stadium,
-       m.match_desc
+       m.match_desc,
+       m.played 
 from matches m
 join teams th on th.id_team = m.team_home 
-join teams tg on tg.id_team = m.team_guestname_
+join teams tg on tg.id_team = m.team_guest
 join seasons se on se.id_season = m.season_id
 left join stadiums s on s.id_stadium = m.stadium_id
 left join divisions d on d.id_division = m.division_id
